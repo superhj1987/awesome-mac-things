@@ -1,11 +1,6 @@
 #!/usr/bin/python
-'''
-Created on Jun 1, 2014
- 
-@author: jay
-'''
- 
 import subprocess
+
 import re
  
 # Get process info
