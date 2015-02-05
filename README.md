@@ -1,7 +1,6 @@
-# mac_useful_things
--------
+#mac_useful_things
 
-***some useful things in MAC os:scripts shells doc shortcut key***
+*some useful things in MAC os:scripts shells doc shortcut key*
 
 ## mac_free.py
 
