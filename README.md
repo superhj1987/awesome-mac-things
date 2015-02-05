@@ -1,4 +1,4 @@
-useful script in MAC os
+useful scripts in MAC os
 
 ## mac_free.py
 
