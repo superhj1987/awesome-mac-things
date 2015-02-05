@@ -1,5 +1,9 @@
-some useful python script in MAC os
+useful script in MAC os
 
 ## mac_free.py
 
 show memory usage
+
+## useful_shells.sh
+
+some mac useful shells
