@@ -8,10 +8,10 @@ show memory usage in python
 
 some mac useful shells
 
-## mac_shortcut_key_intro.md
+## shortcut_keys_intro.md
 
 introduce mac shortcut keys
 
-## st_shortcut_keys
+## st_shortcut_keys.md
 
 SublimeText2 shortcut keys
