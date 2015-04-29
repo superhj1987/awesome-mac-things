@@ -24,3 +24,27 @@ find $PWD -name ".DS_Store" -exec rm -f {} \;
 
 #查看当前文件夹的总大小
 du -sh dirname
+
+# 使用caffeinate阻止Mac运行屏幕保护和睡眠
+caffeinate -t 3600
+
+# 使用pkgutil解压PKG文件
+pkgutil --expand macx.pkg ~/Desktop/
+
+# 使用purge命令释放内存
+purge
+
+# 使用open命令开启多个相同应用
+open -n /Applications/Safari.app/
+
+# 不通过App Store更新OS X
+sudo softwareupdate -i -a
+
+# 将所有下载过的文件列出来
+sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent' |more
+
+# 使用chflags命令隐藏文件或文件夹,如果你想再次看到文件夹，只需将hidden改为nohidden即可。
+chflags hidden ~/Desktop/macx
+
+# 创建有密码保护的压缩文件
+zip -e protected.zip ~/Desktop/macx.txt
