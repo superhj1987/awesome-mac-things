@@ -22,4 +22,4 @@ SublimeText2 shortcut keys
 
 ## 5. zsh_tips.md
 
-zsh usefule tips
+zsh useful tips
