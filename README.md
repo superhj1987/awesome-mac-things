@@ -2,7 +2,7 @@
 
 ----
 
-*some useful things in MAC os:scripts shells doc shortcut key*
+*some useful things in MAC os:scripts;shells;doc;shortcut keys of some common useful apps*
 
 ## 1. mac_free.py
 
