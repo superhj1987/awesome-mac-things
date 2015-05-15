@@ -19,9 +19,6 @@ for i in "$@"; do
 echo hello| mail -s "test" "test@126.com" -f "no-reply@126.com"  
 echo | mutt -a syslogs.tar.gz admin@domain.org  
 
-# 删除当前目录下面所有 .DS_Store
-find $PWD -name ".DS_Store" -exec rm -f {} \;
-
 #查看当前文件夹的总大小
 du -sh dirname
 

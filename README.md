@@ -19,3 +19,7 @@ introduce mac shortcut keys
 ##4. st_shortcut_keys.md
 
 SublimeText2 shortcut keys
+
+##5. rm_dsstore.sh
+
+删除当前目录下面所有 .DS_Store
