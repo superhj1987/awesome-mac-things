@@ -28,6 +28,6 @@ SublimeText2 shortcut keys
 
 zsh useful tips
 
-## 6. rm_dsstore.sh
+## 6. bin/rm_dsstore.sh
 
 删除当前目录下的.DS_Store文件
