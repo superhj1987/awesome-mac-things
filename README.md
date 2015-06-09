@@ -8,6 +8,8 @@ some useful things in MAC os.
 - shells
 - tips of some common useful apps
 
+**PS: set bin to the System Path**
+
 ## 1. mac_free.py
 
 show memory usage in python
@@ -28,11 +30,11 @@ SublimeText2 shortcut keys
 
 zsh useful tips
 
-## 6. bin/rm_ds.sh
+## 6. bin/rm_ds
 
 删除当前目录下的.DS_Store文件
 
-## 7. bin/git_init.sh
+## 7. bin/git_init
 
 初始化git repository
 
