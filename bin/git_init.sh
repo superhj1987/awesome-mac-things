@@ -17,6 +17,7 @@ if [ ! -z $1 ]; then
 
     cd $DIR
 fi
+
 rm -rf .gitignore
 
 IGNORE_FILES=(.DS_Store build target .idea .classpath .project *.iml out)
