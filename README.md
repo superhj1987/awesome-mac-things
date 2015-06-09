@@ -32,7 +32,7 @@ zsh useful tips
 
 删除当前目录下的.DS_Store文件
 
-## 7. git_init.sh
+## 7. bin/git_init.sh
 
 初始化git repository
 
