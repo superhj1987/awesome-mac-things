@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -z $1 ]; then
     DIR=$2
     if [ -z $DIR ]; then
@@ -15,5 +17,11 @@ if [ ! -z $1 ]; then
 
     cd $DIR
 fi
+rm -rf .gitignore
 
-echo '.DS_Store\nbuild\ntarget\n.idea\n.classpath\n.project\n*.iml\nout' > .gitignore
+IGNORE_FILES=(.DS_Store build target .idea .classpath .project *.iml out)
+
+for rm_file in ${IGNORE_FILES[@]}
+do
+  echo $rm_file >> .gitignore 
+done
