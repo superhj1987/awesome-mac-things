@@ -8,7 +8,7 @@ some useful things in MAC os.
 - shells
 - tips of some common useful apps
 
-**PS: set bin to the System Path**
+**PS: u can set `bin` to the System Path to use the common usage shells**
 
 ## 1. mac_free.py
 
