@@ -34,9 +34,10 @@ zsh useful tips
 
 ## 7. git_init.sh
 
-git_init.sh [git_repos_url] [to_dir]
-
 初始化git repository
 
-git_repos_url为空时，初始化.gitignore文件
-git_repos_url不为空，则将此repos克隆到本地，然后初始化.gitignore文件
+	git_init.sh [git_repos_url] [to_dir]
+
+- git_repos_url为空时，初始化.gitignore文件
+
+- git_repos_url不为空，则将此repos克隆到本地，然后初始化.gitignore文件
