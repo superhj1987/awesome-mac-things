@@ -32,6 +32,11 @@ zsh useful tips
 
 删除当前目录下的.DS_Store文件
 
-## 7. init_gitignore.sh
+## 7. git_init.sh
 
-初始化gitignore文件
+git_init.sh [git_repos_url] [to_dir]
+
+初始化git repository
+
+git_repos_url为空时，初始化.gitignore文件
+git_repos_url不为空，则将此repos克隆到本地，然后初始化.gitignore文件
