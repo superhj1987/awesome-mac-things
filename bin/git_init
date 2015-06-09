@@ -2,7 +2,7 @@
 # @Usage
 #     $ ./git_init [git_repos_url] [to_dir]
 #
-$ @author Bryant Hang
+# @author Bryant Hang
 
 if [ ! -z $1 ]; then
     DIR=$2
