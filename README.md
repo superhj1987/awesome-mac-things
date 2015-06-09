@@ -31,3 +31,7 @@ zsh useful tips
 ## 6. bin/rm_ds.sh
 
 删除当前目录下的.DS_Store文件
+
+## 7. init_gitignore.sh
+
+初始化gitignore文件
