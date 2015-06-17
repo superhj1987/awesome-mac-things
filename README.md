@@ -10,7 +10,7 @@ some useful things in MAC os.
 
 **PS: u can set `bin` to the System Path to use the common usage shells**
 
-## 1. mac_free.py
+## 1. memory_usage.py
 
 show memory usage in python
 
