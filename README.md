@@ -36,9 +36,11 @@ zsh useful tips
 
 ## 7. bin/git_init
 
-初始化git repository
+**Description**: 初始化git repository
 
-	git_init [git_repos_url] [to_dir]
+git_init [git_repos_url] [to_dir]
+
+**Option**:
 
 - git_repos_url为空时，初始化.gitignore文件
 
