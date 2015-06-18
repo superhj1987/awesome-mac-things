@@ -1,8 +1,6 @@
 # mac_useful_things
 
-----
-
-some useful things in MAC os.
+some useful things in MAC OS.
 
 - scripts
 - shells
@@ -10,38 +8,45 @@ some useful things in MAC os.
 
 **PS: u can set `bin` to the System Path to use the common usage shells**
 
-## 1. memory_usage.py
+## useful_shells.sh
 
-show memory usage in python
+**Description**：some mac useful shells
 
-## 2. useful_shells.sh
+## shortcut_keys_intro.md
 
-some mac useful shells
+**Description**: introduce mac shortcut keys
 
-## 3. shortcut_keys_intro.md
+## st_shortcut_keys.md
 
-introduce mac shortcut keys
+**Description**: SublimeText2 shortcut keys
 
-## 4. st_shortcut_keys.md
+## zsh_tips.md
 
-SublimeText2 shortcut keys
+**Description**: zsh useful tips
 
-## 5. zsh_tips.md
+## bin
 
-zsh useful tips
+### memory_usage.py
 
-## 6. bin/rm_ds
+----------------------
 
-删除当前目录下的.DS_Store文件
+**Description**：show memory usage in python
 
-## 7. bin/git_init
+### git_init
 
-初始化git repository
+----------------------
+
+**Description**: init git repository
 
 **Usage**: git_init [git_repos_url] [to_dir]
 
 **Option**:
 
-- git_repos_url为空时，初始化.gitignore文件
+- when ***git_repos_url*** is empty，init .gitignore, otherwise clone the repository to [to_dir]，and int .gitignore
+- when ***to_dir*** is empty, the to_dir is the end of the git_repos_url,for example ***mac_useful_thins.git***.
 
-- git_repos_url不为空，则将此repos克隆到本地，然后初始化.gitignore文件
+### rm_ds
+
+----------------------
+
+**Description**: delete .DS_Store in current dir
