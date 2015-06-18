@@ -38,7 +38,7 @@ zsh useful tips
 
 初始化git repository
 
-git_init [git_repos_url] [to_dir]
+**Usage**: git_init [git_repos_url] [to_dir]
 
 **Option**:
 
