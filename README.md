@@ -43,7 +43,11 @@ some useful things in MAC OS.
 **Option**:
 
 - when ***git_repos_url*** is empty，init .gitignore, otherwise clone the repository to [to_dir]，and int .gitignore
-- when ***to_dir*** is empty, the to_dir is the end of the git_repos_url,for example ***mac_useful_thins.git***.
+- when ***to_dir*** is empty, the to_dir is the end of the git_repos_url,for example ***mac_useful_thins.git***
+
+**Example**:
+
+	git_init git@github.com:superhj1987/mac_useful_things.git mac_usefule_things
 
 ### rm_ds
 
