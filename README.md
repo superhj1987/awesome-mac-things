@@ -47,7 +47,7 @@ some useful things in MAC OS.
 
 **Example**:
 
-	git_init git@github.com:superhj1987/mac_useful_things.git mac_usefule_things
+	git_init git@github.com:superhj1987/mac_useful_things.git mac_useful_things
 
 ### rm_ds
 
