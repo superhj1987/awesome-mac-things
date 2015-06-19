@@ -26,7 +26,7 @@ some useful things in MAC OS.
 
 ## bin
 
-### memory_usage.py
+### show_memory_usage
 
 ----------------------
 
