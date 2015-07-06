@@ -11,4 +11,4 @@ open .ssh/config and add
   
 - Use zoc
 
-Session Profile -> Idel Timer -> Afeter "3" sec. idle Send ^@.
+Session Profile -> Idel Timer -> After "3" sec. idle Send ^@.
