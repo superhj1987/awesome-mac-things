@@ -24,6 +24,10 @@ some useful things in MAC OS.
 
 **Description**: zsh useful tips
 
+## ssh_timeout_solution.md
+
+**Description**: solution of ssh timeout
+
 ## bin
 
 ### show_memory_usage
