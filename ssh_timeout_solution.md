@@ -8,6 +8,8 @@ In /etc/ssh/sshd_config, ClientAliveCountMax(minute) represent the timout.U can 
 open .ssh/config and add
 
     ServerAliveInterval 60
+
+the unit of ***ServerAliveInterval*** is Second.
   
 - Use zoc
 
