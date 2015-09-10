@@ -58,3 +58,9 @@ some useful things in MAC OS.
 ----------------------
 
 **Description**: delete .DS_Store in current dir
+
+### show_net_stats
+
+----------------------
+
+**Description**：show the count of each status connection,including time_wait、close_wait and so on.
