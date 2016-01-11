@@ -64,3 +64,21 @@ some useful things in MAC OS.
 ----------------------
 
 **Description**：show the count of each status connection,including time_wait、close_wait and so on.
+
+### generate_md_contents
+
+----------------------
+
+**Description**：generate the contents of a markdown doc.The doc's format meets:the first line is the title:# [title],the subtitle is the contents:## [subtitle].
+
+**Usage**: generate_md_contents [doc_name] [to_name]
+
+**Option**:
+
+- when ***to_name*** is empty，the generate content will overwrite the ***doc_name*** file, otherwise the content will be in the ***to_name*** file.
+
+**Example**:
+
+	generate_md_contents ../test/test.md test_with_contents.md
+
+
