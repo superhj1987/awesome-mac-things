@@ -64,16 +64,17 @@ def main():
             else:
                 if line.startswith('## '):
                     tag = line[3:-1] #去除结尾换行符 
-                    tags.append(tag)
+                    anchor = tag if anchorFlag else tag.lower()
+                    tags.append((tag,anchor))
                     
-                    line = tag_anchor_template % (tag,tag) if anchorFlag else line #生成tag描点
+                    line = tag_anchor_template % (tag,anchor) if anchorFlag else line #生成tag描点
                 new_lines.append(line)
             i = i + 1
 
     contents += ['\n',contents_title,'\n']
 
-    for t in tags:
-        contents.append(contents_template % (t,t))
+    for t,a in tags:
+        contents.append(contents_template % (t,a))
 
     new_lines = contents + new_lines
 
