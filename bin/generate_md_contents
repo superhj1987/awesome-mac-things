@@ -42,7 +42,7 @@ def main():
         sys.exit(1) 
 
     fname = args[0]
-    targetFname = args[1] if argc >= 2 else None
+    targetFname = args[1] if argc >= 2 else fname
 
     print '-'*10 + 'start process %s' % fname + '_'*10
 
@@ -59,7 +59,11 @@ def main():
             if i == 0 :
                 contents.append(line) #添加首行title
             elif line.startswith(contents_title):
-                    print 'the file already have contents, exit...'
+                    print 'oh, the file already have contents...'
+                    
+                    if fname != targetFname:
+                        shutil.copyfile(fname,targetFname)
+
                     sys.exit(0)
             else:
                 if line.startswith('## '):
@@ -80,8 +84,7 @@ def main():
 
     bak_file = None
 
-    if targetFname == None: #覆盖原文件需要先备份
-        targetFname = fname 
+    if targetFname == fname: #覆盖原文件需要先备份
         # 备份原文件
         bak_file =  fname + '.bak'   
         shutil.copyfile(fname,bak_file)
@@ -91,13 +94,14 @@ def main():
             f.writelines(new_lines)
     except IOError as err: 
         print("update file error:" + str(err)) #str()将对象转换为字符串
+
         if bak_file != None and os.path.exists(bak_file):
             shutil.copyfile(bak_file,fname)
 
     if bak_file != None and os.path.exists(bak_file):
         os.remove(bak_file)
 
-    print '-'*10 + 'end process %s' % fname + '_'*10
+    print '-'*10 + 'end generate contents of %s to %s' % (fname,targetFname) + '_'*10
 
 if __name__ == "__main__":
     main()
