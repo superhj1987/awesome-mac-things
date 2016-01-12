@@ -69,16 +69,17 @@ some useful things in MAC OS.
 
 ----------------------
 
-**Description**：generate the contents of a markdown doc.The doc's format meets:the first line is the title:# [title],the subtitle is the contents:## [subtitle].
+**Description**：generate the contents of a markdown doc.The doc's format meets:the first line is the title:# [title],the subtitle is the contents:## [subtitle].The example docs are in the **test** dir.
 
-**Usage**: generate_md_contents [doc_name] [to_name]
+**Usage**: generate_md_contents [-a] doc_name [to_doc_name]
 
 **Option**:
 
-- when ***to_name*** is empty，the generate content will overwrite the ***doc_name*** file, otherwise the content will be in the ***to_name*** file.
+- ***-a*** means generate the contents with append the anchor to the sub title.
+- when ***to__doc_name*** is empty，the generate content will overwrite the ***doc_name*** file, otherwise the content will be in the ***to__doc_name*** file.
 
 **Example**:
 
-	generate_md_contents ../test/test.md test_with_contents.md
+	generate_md_contents ../test/test_doc.md test__doc_with_contents.md
 
 

@@ -13,6 +13,7 @@
 import sys
 import shutil
 import os
+import getopt 
 
 reload(sys) 
 sys.setdefaultencoding( "utf-8" )
@@ -21,15 +22,27 @@ contents_template = '* [%s](#%s)\n'
 tag_anchor_template = "## <a name='%s'></a>%s\n"
 contents_title = u'\n## 目录\n\n'
 
-def main():
-    argc = len(sys.argv)
+def usage():
+    print "usage: generate_md_contents [-a] doc_name [to_doc_name]"
 
-    if argc < 2:
+def main():
+    opts,args = getopt.getopt(sys.argv[1:],'ah',[])
+
+    anchorFlag = False
+    for option, value in opts: 
+        if option == "-a":
+            anchorFlag = True
+        elif option == "-h":
+            usage()
+            sys.exit(0)
+
+    argc = len(args)
+    if argc < 1:
         print "Invalid argument count."
         sys.exit(1) 
 
-    fname = sys.argv[1]
-    targetFname = sys.argv[2] if argc > 2 else None
+    fname = args[0]
+    targetFname = args[1] if argc >= 2 else None
 
     print '-'*10 + 'start process %s' % fname + '_'*10
 
@@ -53,7 +66,7 @@ def main():
                     tag = line[3:-1] #去除结尾换行符 
                     tags.append(tag)
                     
-                    #line = tag_anchor_template % (tag,tag) #生成tag描点
+                    line = tag_anchor_template % (tag,tag) if anchorFlag else line #生成tag描点
                 new_lines.append(line)
             i = i + 1
 
@@ -64,24 +77,24 @@ def main():
 
     new_lines = contents + new_lines
 
-    bakFile = None
+    bak_file = None
 
-    if targetFname == None:
+    if targetFname == None: #覆盖原文件需要先备份
         targetFname = fname 
         # 备份原文件
-        bakFile =  fname + '.bak'   
-        shutil.copyfile(fname,bakFile)
+        bak_file =  fname + '.bak'   
+        shutil.copyfile(fname,bak_file)
 
     try:
         with open(targetFname, "w") as f:
             f.writelines(new_lines)
     except IOError as err: 
         print("update file error:" + str(err)) #str()将对象转换为字符串
-        if bakFile != None and os.path.exists(bakFile):
-            shutil.copyfile(bakFile,fname)
+        if bak_file != None and os.path.exists(bak_file):
+            shutil.copyfile(bak_file,fname)
 
-    if bakFile != None and os.path.exists(bakFile):
-        os.remove(bakFile)
+    if bak_file != None and os.path.exists(bak_file):
+        os.remove(bak_file)
 
     print '-'*10 + 'end process %s' % fname + '_'*10
 
