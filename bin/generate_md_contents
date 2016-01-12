@@ -20,7 +20,7 @@ sys.setdefaultencoding( "utf-8" )
 
 contents_template = '* [%s](#%s)\n'
 tag_anchor_template = "## <a name='%s'></a>%s\n"
-contents_title = u'\n## 目录\n\n'
+contents_title = u'## 目录\n'
 
 def usage():
     print "usage: generate_md_contents [-a] doc_name [to_doc_name]"
@@ -70,7 +70,7 @@ def main():
                 new_lines.append(line)
             i = i + 1
 
-    contents += [contents_title]
+    contents += ['\n',contents_title,'\n']
 
     for t in tags:
         contents.append(contents_template % (t,t))
