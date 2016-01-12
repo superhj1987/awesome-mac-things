@@ -53,7 +53,7 @@ def main():
                     tag = line[3:-1] #去除结尾换行符 
                     tags.append(tag)
                     
-                    line = tag_anchor_template % (tag,tag) #生成tag描点
+                    #line = tag_anchor_template % (tag,tag) #生成tag描点
                 new_lines.append(line)
             i = i + 1
 
