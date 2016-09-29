@@ -24,9 +24,13 @@ fi
 
 rm -rf .gitignore
 
-IGNORE_FILES=(.DS_Store build target .idea .classpath .project *.iml out)
+#IGNORE_FILES=(.DS_Store build target .idea .classpath .project *.iml out)
 
-for rm_file in ${IGNORE_FILES[@]}
-do
-  echo $rm_file >> .gitignore 
-done
+#for rm_file in ${IGNORE_FILES[@]}
+#do
+#  echo $rm_file >> .gitignore 
+#done
+
+PRG="$0"
+PRGDIR=`dirname "$PRG"`
+cp -rf $PRGDIR/../tpl/gitignore.tpl .gitignore
