@@ -82,4 +82,10 @@ some useful things in MAC OS.
 
 	generate_md_contents ../test/test_doc.md test__doc_with_contents.md
 
+### change_git_origin_remote
 
+----------------------
+
+**Description**: change current origin remote repos to a new  url 
+
+**Usage**: change_git_origin_remote [new_git_repos_url]
