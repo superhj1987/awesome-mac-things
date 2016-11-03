@@ -31,11 +31,10 @@ def main():
 
     count = 0
     with open(fname) as f:
-        for line in f:
-            line = line.strip()
-            if line != '':
-                line = line.replace(" ","")
-                count = count + len(line.decode('utf-8'))
+        words = f.read().strip()
+        for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~ \n':  
+            words = words.replace(ch, '')  
+        count = count + len(words.decode('utf-8'))
 
     print '-'*10 + 'total word: %s' % count + '-'*10
 
