@@ -44,7 +44,7 @@ def main():
     fname = args[0]
     targetFname = args[1] if argc >= 2 else fname
 
-    print '-'*10 + 'start process %s' % fname + '_'*10
+    print '-'*10 + 'start process %s' % fname + '-'*10
 
     new_lines = []
 
@@ -101,7 +101,7 @@ def main():
     if bak_file != None and os.path.exists(bak_file):
         os.remove(bak_file)
 
-    print '-'*10 + 'end generate contents of %s to %s' % (fname,targetFname) + '_'*10
+    print '-'*10 + 'end generate contents of %s to %s' % (fname,targetFname) + '-'*10
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,48 @@
+#!/usr/bin/env python
+#coding=UTF-8
+
+'''
+生成mardown文档的目录，对文档格式的要求如下：
+
+1. 首行为 # title
+2. 目录为 ## subTitle
+
+自动生成subTitle的目录附加到title的下一行
+'''
+
+import sys
+import shutil
+import os
+import getopt 
+import string
+
+reload(sys) 
+sys.setdefaultencoding( "utf-8" )
+
+def usage():
+    print "usage: word_count doc_name"
+
+def main():
+    opts,args = getopt.getopt(sys.argv[1:],'',[])
+
+    argc = len(args)
+    if argc < 1:
+        print "Invalid argument count."
+        sys.exit(1) 
+
+    fname = args[0]
+
+    print '-'*10 + 'start wordcount for  %s' % fname + '-'*10
+
+    count = 0
+    with open(fname) as f:
+        for line in f:
+            line = line.strip()
+            if line != '':
+                line = line.replace(" ","")
+                count = count + len(line.decode('utf-8'))
+
+    print '-'*10 + 'total word: %s' % count + '-'*10
+
+if __name__ == "__main__":
+    main()
