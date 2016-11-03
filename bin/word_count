@@ -2,12 +2,7 @@
 #coding=UTF-8
 
 '''
-生成mardown文档的目录，对文档格式的要求如下：
-
-1. 首行为 # title
-2. 目录为 ## subTitle
-
-自动生成subTitle的目录附加到title的下一行
+计算文档中的文字总数
 '''
 
 import sys

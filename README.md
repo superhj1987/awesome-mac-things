@@ -89,3 +89,11 @@ some useful things in MAC OS.
 **Description**: change current origin remote repos to a new  url 
 
 **Usage**: change_git_origin_remote [new_git_repos_url]
+
+## word_count
+
+----------------------
+
+**Description**: get the word total count in a doc
+
+**Usage**: word_count [doc_name]
