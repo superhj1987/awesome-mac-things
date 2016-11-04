@@ -90,7 +90,7 @@ some useful things in MAC OS.
 
 **Usage**: change_git_origin_remote [new_git_repos_url]
 
-## word_count
+### word_count
 
 ----------------------
 
