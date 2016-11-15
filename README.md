@@ -1,4 +1,4 @@
-# mac_useful_things
+# awesome-mac-things
 
 some useful things in MAC OS.
 
