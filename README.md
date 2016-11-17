@@ -69,7 +69,7 @@ some useful things in MAC OS.
 
 ----------------------
 
-**Description**：generate the contents of a markdown doc.The doc's format meets:the first line is the title:# [title],the subtitle is the contents:## [subtitle].The example docs are in the **test** dir.
+**Description**：generate the contents of a markdown doc.The doc's format meets:the first line is the title:# [title],the other title such as ##,###,####... is the contents and there must be a blank between #,##,###... and title text. The example docs are in the **test** dir.
 
 **Usage**: generate_md_contents [-a] doc_name [to_doc_name]
 
