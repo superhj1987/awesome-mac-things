@@ -18,7 +18,7 @@ reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
 contents_template = '* [%s](#%s)\n'
-tag_anchor_template = "<a name='%s'></a>%s\n"
+tag_anchor_template = " <a name='%s'></a>%s\n"
 contents_title = u'## 目录\n'
 
 def usage():
@@ -70,7 +70,7 @@ def main():
                     anchor = tag if anchorFlag else tag.lower()
                     contents.append('   ' * (titleLevel - 2) + contents_template % (tag,anchor))
                     
-                    line = '#' * titleLevel + ' ' + tag_anchor_template % (tag,anchor) if anchorFlag else line #生成tag描点
+                    line = '#' * titleLevel + tag_anchor_template % (tag,anchor) if anchorFlag else line #生成tag描点
                 new_lines.append(line)
             i = i + 1
 
