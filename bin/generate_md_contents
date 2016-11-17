@@ -2,10 +2,9 @@
 #coding=UTF-8
 
 '''
-生成mardown文档的目录，对文档格式的要求如下：
+根据标题(# ## ### ####...)生成mardown文档的目录, 支持无限层级标题
 
-1. 首行为 # title
-2. 目录为 ## subTitle
+**#,##,##与标题之间必须留有空格**
 
 自动生成subTitle的目录附加到title的下一行
 '''
@@ -19,7 +18,7 @@ reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
 contents_template = '* [%s](#%s)\n'
-tag_anchor_template = "## <a name='%s'></a>%s\n"
+tag_anchor_template = "<a name='%s'></a>%s\n"
 contents_title = u'## 目录\n'
 
 def usage():
@@ -48,8 +47,6 @@ def main():
 
     new_lines = []
 
-    tags = []   
-
     contents = []
 
     i = 0
@@ -57,7 +54,8 @@ def main():
         lines = f.readlines()
         for line in lines:
             if i == 0 :
-                contents.append(line) #添加首行title
+                contents.append(line) #添加一级title
+                contents += ['\n',contents_title,'\n'] #添加目录title
             elif line.startswith(contents_title):
                     print 'oh, the file already have contents...'
                     
@@ -66,19 +64,15 @@ def main():
 
                     sys.exit(0)
             else:
-                if line.startswith('## '):
-                    tag = line[3:-1] #去除结尾换行符 
+                if line.startswith('##'): #标题
+                    titleLevel = line.index(' '); 
+                    tag = line[(titleLevel+1) : -1] #去除结尾换行符 
                     anchor = tag if anchorFlag else tag.lower()
-                    tags.append((tag,anchor))
+                    contents.append('   ' * (titleLevel - 2) + contents_template % (tag,anchor))
                     
-                    line = tag_anchor_template % (tag,anchor) if anchorFlag else line #生成tag描点
+                    line = '#' * titleLevel + ' ' + tag_anchor_template % (tag,anchor) if anchorFlag else line #生成tag描点
                 new_lines.append(line)
             i = i + 1
-
-    contents += ['\n',contents_title,'\n']
-
-    for t,a in tags:
-        contents.append(contents_template % (t,a))
 
     new_lines = contents + new_lines
 
