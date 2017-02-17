@@ -6,11 +6,11 @@ all:
 
 install:
 	@mkdir -p $(prefix)/bin/
-	@echo '#!/bin/bash' > $(prefix)/bin/atool
-	@echo '##$(shell pwd)' >> $(prefix)/bin/atool
-	@echo 'exec "$(shell pwd)/atool" "$$@"' >> $(prefix)/bin/atool
-	@chmod 755 $(prefix)/bin/atool
-	@chmod 755 atool
-	@echo 'install finished! type "atool" to show usages.'
+	@echo '#!/bin/bash' > $(prefix)/bin/mthings
+	@echo '##$(shell pwd)' >> $(prefix)/bin/mthings
+	@echo 'exec "$(shell pwd)/mthings" "$$@"' >> $(prefix)/bin/mthings
+	@chmod 755 $(prefix)/bin/mthings
+	@chmod 755 mthings
+	@echo 'install finished! type "mthings" to show usages.'
 uninstall:
-	@rm -f $(prefix)/bin/atool
+	@rm -f $(prefix)/bin/mthings

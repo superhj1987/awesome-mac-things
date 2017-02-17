@@ -29,25 +29,25 @@ find_command(){
     	desp=`grep '^##' $1/bin/$file | cut -c 3-`
     	if [ "$desp" != ""  ]; then
 			print_column "$file\t:$desp"
-			echo "$file" >> $HOME/.atool/cmds.cache
+			echo "$file" >> $HOME/.mthings/cmds.cache
     	fi
 	done
 	echo ''
 }
 
 list_command() {
-    rm -f $HOME/.atool/cmds.cache 2>/dev/null
-    mkdir $HOME/.atool 2>/dev/null
+    rm -f $HOME/.mthings/cmds.cache 2>/dev/null
+    mkdir $HOME/.mthings 2>/dev/null
     echo 'Available commands:'
-    find_command $ATOOL_DIR
+    find_command $MTHINGS_DIR
     exit 0;
 }
 
 uninstall() {
-    echo -n "Uninstall atool,(y)es or (n)o?"
+    echo -n "Uninstall mthings,(y)es or (n)o?"
     read choice < /dev/tty
-    if [ "$choice" = "y" ] && [ "$ATOOL_DIR" != "/" ];then
-        cd $ATOOL_DIR && make uninstall && rm -rf $ATOOL_DIR && echo "atool uninstall finished. Bye~"
+    if [ "$choice" = "y" ] && [ "$MTHINGS_DIR" != "/" ];then
+        cd $THINGS_DIR && make uninstall && rm -rf $MTHINGS_DIR && echo "mthings uninstall finished. Bye~"
     fi
     exit 0
 }

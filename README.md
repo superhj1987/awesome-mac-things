@@ -12,11 +12,28 @@ some useful things in MAC OS.
 - Mac
 - git1.7+
 
+## Install
+
+Three methods:
+
+- `curl -s "https://raw.githubusercontent.com/superhj1987/awesome-mac-things/master/get.sh" | bash -s`
+- Download the source and `make install`
+- Download the source and set `bin` to the System Path to use the common usage shells
+
+## Uninstall
+
+mthings uninstall
+
 ## Usage
 
-`curl -s "https://raw.githubusercontent.com/superhj1987/awesome-mac-things/master/get.sh" | bash -s`
+* `mthings`
+> show system command
 
-**PS: u also can download the source and set `bin` to the System Path to use the common usage shells**
+* `mtings list`
+> show command list
+
+* `mthings update`
+> update mthings
 
 ## Document
 

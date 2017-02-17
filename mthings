@@ -1,14 +1,14 @@
 
 #!/bin/bash
 
-export ATOOL_DIR=$(dirname $0) 
+export MTHINGS_DIR=$(dirname $0) 
 
 # load common lib functions
-source $ATOOL_DIR/common-sh
+source $MTHINGS_DIR/common-sh
 
 if [ $# = 0 ];then
     print_column 'Usage '
-    print_column " atool list\t: show all commands \natool command\t: execute a command\natool uninstall\t: uninstall wtool"
+    print_column " mthings list\t: show all commands \nmthings command\t: execute a command\nmthings update\t: update mthings\nmthings uninstall\t: uninstall mthings"
     exit
 fi
 
@@ -16,7 +16,7 @@ if [ "$1" = "list" ];then
     list_command "$@"
 fi
 
-tools_dir=$ATOOL_DIR/bin/
+tools_dir=$MTHINGS_DIR/bin/
 command_file=$1;shift
 command=`find $tools_dir -maxdepth 1 -name $command_file `
 
