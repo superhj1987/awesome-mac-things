@@ -40,7 +40,7 @@ mthings uninstall
 
 ## Docs and Commands
 
-### :coffee: Document
+### :watch: Document
 
 * `useful_shells`
 > some mac useful shells
