@@ -35,7 +35,7 @@ find_command(){
 	echo ''
 }
 
-list_module() {
+list_command() {
     rm -f $HOME/.atool/cmds.cache 2>/dev/null
     mkdir $HOME/.atool 2>/dev/null
     echo 'Available commands:'

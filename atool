@@ -13,7 +13,7 @@ if [ $# = 0 ];then
 fi
 
 if [ "$1" = "list" ];then 
-    list_module "$@"
+    list_command "$@"
 fi
 
 tools_dir=$ATOOL_DIR/bin/
