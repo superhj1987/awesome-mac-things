@@ -20,4 +20,4 @@ some useful things in MAC OS.
 
 ## Document
 
-[doc/document.md][doc/document.md]
+[doc/document.md](doc/document.md)
