@@ -38,7 +38,7 @@ mthings uninstall
 * `mthings show_doc [doc_name]`
 > show the contents of the specified doc 
 
-## Doc and Command List
+## Docs and Commands
 
 ### :coffee: Document
 
