@@ -23,10 +23,10 @@ do_download(){
 }
 
 do_download_archive(){
-    wget https://github.com/superhj1987/awesome-mac-things/archive/v1.0.zip -O awesome-mac-things.zip
+    wget https://codeload.github.com/superhj1987/awesome-mac-things/zip/master -O awesome-mac-things.zip
     unzip awesome-mac-things.zip
     rm -rf awesome-mac-things.zip
-    mv awesome-mac-things-1.0 awesome-mac-things
+    mv awesome-mac-things-master awesome-mac-things
     cd awesome-mac-things
 }
 
