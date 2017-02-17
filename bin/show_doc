@@ -1,0 +1,3 @@
+#!/bin/bash
+
+more $MTHINGS_DIR/doc/$1'.md'

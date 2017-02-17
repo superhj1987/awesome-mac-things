@@ -8,7 +8,7 @@ source $MTHINGS_DIR/common-sh
 
 if [ $# = 0 ];then
     print_column 'Usage '
-    print_column " mthings list\t: show all commands \nmthings command\t: execute a command\nmthings update\t: update mthings\nmthings uninstall\t: uninstall mthings"
+    print_column " mthings list\t: show all commands \nmthings command\t: execute a command\nmthings show_doc\t: show the contents of the specified doc\nmthings update\t: update mthings\nmthings uninstall\t: uninstall mthings"
     exit
 fi
 
@@ -16,7 +16,7 @@ if [ "$1" = "list" ];then
     list_command "$@"
 fi
 
-tools_dir=$MTHINGS_DIR/bin/
+tools_dir=$MTHINGS_DIR/bin
 command_file=$1;shift
 command=`find $tools_dir -maxdepth 1 -name $command_file `
 
