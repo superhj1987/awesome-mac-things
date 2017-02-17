@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+## generate contents for a markdown
 #coding=UTF-8
 
 '''

@@ -1,5 +1,5 @@
 #!/bin/bash
-# 删除当前目录下面所有 .DS_Store
+## remove all the .DS_Store file in currrent dir
 # @Usage
 #   $ ./rm_ds
 #

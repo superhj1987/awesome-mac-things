@@ -1,4 +1,6 @@
 #!/usr/bin/python
+## show the memory usage
+
 import subprocess
 
 import re

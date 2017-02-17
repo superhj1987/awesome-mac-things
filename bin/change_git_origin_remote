@@ -1,4 +1,5 @@
 #!/bin/bash
+## change origin remote in a git repository 
 
 git remote rm origin
 git remote add origin $1

@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 #coding=UTF-8
+## count the word in the doc, support chinese
 
-'''
-计算文档中的文字总数
-'''
 
 import sys
 import shutil

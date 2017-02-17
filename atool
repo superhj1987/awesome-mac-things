@@ -1,0 +1,28 @@
+
+#!/bin/bash
+
+export ATOOL_DIR=$(dirname $0) 
+
+# load common lib functions
+source $ATOOL_DIR/common-sh
+
+if [ $# = 0 ];then
+    print_column 'Usage '
+    print_column " atool list\t: show all commands \natool command\t: execute a command\natool uninstall\t: uninstall wtool"
+    exit
+fi
+
+if [ "$1" = "list" ];then 
+    list_module "$@"
+fi
+
+tools_dir=$ATOOL_DIR/bin/
+command_file=$1;shift
+command=`find $tools_dir -maxdepth 1 -name $command_file `
+
+if [ ! -f "$command" ]; then
+	echo "$command_file command not found!"
+	exit 1;
+fi
+
+exec "$command" "$@"

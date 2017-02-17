@@ -1,4 +1,5 @@
 #!/bin/bash
+## init git repository with .gitignore
 # @Usage
 #     $ ./git_init [git_repos_url] [to_dir]
 #
