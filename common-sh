@@ -47,7 +47,7 @@ uninstall() {
     echo -n "Uninstall mthings,(y)es or (n)o?"
     read choice < /dev/tty
     if [ "$choice" = "y" ] && [ "$MTHINGS_DIR" != "/" ];then
-        cd $THINGS_DIR && make uninstall && rm -rf $MTHINGS_DIR && echo "mthings uninstall finished. Bye~"
+        cd $MTHINGS_DIR && make uninstall && rm -rf $MTHINGS_DIR && echo "mthings uninstall finished. Bye~"
     fi
     exit 0
 }
