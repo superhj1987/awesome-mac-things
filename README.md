@@ -1,4 +1,7 @@
-# awesome-mac-things
+awesome-mac-things [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+----
+[![GitHub stars](https://img.shields.io/github/stars/superhj1987/awesome-mac-things.svg?style=social&label=Star&)](https://github.com/superhj1987/awesome-mac-things/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/superhj1987/awesome-mac-things.svg?style=social&label=Fork&)](https://github.com/superhj1987/awesome-mac-things/fork)
 
 some useful things in MAC OS.
 
