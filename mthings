@@ -4,7 +4,7 @@
 export MTHINGS_DIR=$(dirname $0) 
 
 # load common lib functions
-source $MTHINGS_DIR/common-sh
+source $MTHINGS_DIR/common.sh
 
 if [ $# = 0 ];then
     print_column 'Usage '
