@@ -60,6 +60,9 @@ mthings uninstall
 * `ssh_timeout_solution`
 > solution of ssh timeout
 
+* `ssh_keys_save`
+> solution of save password of the ssh keys to avoid input password
+
 ### :coffee: bin
 
 * `show_memory_usage`
