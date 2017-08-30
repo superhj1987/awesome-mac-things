@@ -1,15 +1,18 @@
+ Mac系统Yosemite版本之前，可以通过`ssh-add -K <key>`将私钥存入keychain中。但是之后的版本中由于OpenSSH版本升级，此方式不再生效，每次重启系统都需要再次ssh-add一次。
+
 1. 在`~/.ssh/config`中对Host进行配置
  
   ```
-  Host * 
-    AddKeysToAgent yes
-    UseKeychain yes
+  Host <*|hostName> 
     IdentityFile <key>
+    UseKeychain yes
+    AddKeysToAgent yes
   ```
   
-2. 先使用`ssh-add -K <key>`将私钥加入到keychain中，然后每次启动系统时自动执行`ssh-add -A`。可以通过在`~/Library/LaunchAgents/`下加入一个.plist文件自动执行：
+2. 使用`ssh-add -K <key>`将私钥加入到keychain中，然后每次启动系统时自动执行`ssh-add -A`。
 
   ```
+  <!-- ~/Library/LaunchAgents/ssh-add-a.plist -->
   <?xml version="1.0" encoding="UTF-8"?>
   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
   <plist version="1.0">
@@ -26,5 +29,3 @@
     </dict>
   </plist>
   ```
-  
-  更多信息见：<https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain>。
