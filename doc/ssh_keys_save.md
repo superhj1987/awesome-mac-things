@@ -27,4 +27,4 @@
   </plist>
   ```
   
-  更多信息见：<https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain>
+  更多信息见：<https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain>。
