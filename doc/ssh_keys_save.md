@@ -3,10 +3,12 @@
 1. 在`~/.ssh/config`中对Host进行配置
  
   ```
-  Host <*|hostName> 
+  Host <* | hostName> 
+    ...
     IdentityFile <key>
     UseKeychain yes
     AddKeysToAgent yes
+    ...
   ```
   
 2. 使用`ssh-add -K <key>`将私钥加入到keychain中，然后每次启动系统时自动执行`ssh-add -A`。
