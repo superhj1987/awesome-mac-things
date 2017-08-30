@@ -1,4 +1,4 @@
- Mac系统Yosemite版本之前，可以通过`ssh-add -K <key>`将私钥存入keychain中。但是之后的版本中由于OpenSSH版本升级，此方式不再生效，每次重启系统都需要再次ssh-add一次。
+ Mac系统Yosemite版本之前，可以通过`ssh-add -K <key>`将私钥存入keychain中。但是之后的版本中由于OpenSSH版本升级，此方式不再生效，每次重启系统都需要再次ssh-add。
 
 1. 在`~/.ssh/config`中对Host进行配置
  
