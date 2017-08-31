@@ -45,22 +45,22 @@ mthings uninstall
 
 ### :watch: Document
 
-* [`useful_shells`](useful_shells.md)
+* `useful_shells`
 > some mac useful shells
 
-* [`shortcut_keys_intro`](shortcut_keys_intro.md)
+* `shortcut_keys_intro`
 > introduce mac shortcut keys
 
-* [`st_shortcut_keys`](st_shortcut_keys.md)
+* `st_shortcut_keys`
 > SublimeText2 shortcut keys
 
-* [`zsh_tips`](zsh_tips.md)
+* `zsh_tips`
 > zsh useful tips
 
-* [`ssh_timeout_solution`](ssh_timeout_solution.md)
+* `ssh_timeout_solution`
 > solution of ssh timeout
 
-* [`ssh_keys_save`](ssh_keys_save.md)
+* `ssh_keys_save`
 > solution of save password of the ssh keys to avoid input password
 
 ### :coffee: bin
