@@ -111,3 +111,9 @@ mthings uninstall
 > get the word total count in a doc
 >
 > **Usage**: `word_count [doc_name]`
+> 
+ 
+* `search_aj`
+> search java resources from <https://github.com/superhj1987/awesome-tech-collections/blob/master/awesome-java.md>
+>
+> **Usage**: `search_aj [project_name | category_nam]`

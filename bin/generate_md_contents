@@ -38,7 +38,7 @@ def main():
 
     argc = len(args)
     if argc < 1:
-        print "Invalid argument count."
+        usage()
         sys.exit(1) 
 
     fname = args[0]

@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+#coding=UTF-8
+## 搜索Java资源，https://github.com/superhj1987/awesome-tech-collections/blob/master/awesome-java.md
+
+import sys
+import getopt 
+import urllib2
+
+reload(sys) 
+sys.setdefaultencoding( "utf-8" )
+
+def usage():
+    print "usage: search_aj [catagory_name | project_name]"
+
+def main():
+    opts,args = getopt.getopt(sys.argv[1:],'',[])
+
+    argc = len(args)
+    if argc < 1:
+        usage()
+        sys.exit(1) 
+
+    search_name = args[0]
+
+    print '=' * 16 + "searching for " + search_name + '=' * 16
+
+    req = urllib2.Request("https://raw.githubusercontent.com/superhj1987/awesome-tech-collections/master/awesome-java.md")
+    content = urllib2.urlopen(req).read();
+
+    result = ""
+    target_cat = ""
+
+    lines = content.split("\n")
+    for line in lines:
+        if line.startswith("##") :
+            target_cat = ""
+            category = line[line.index(" "):-1].strip()
+            if category.find(search_name) > 0:
+                result +=  "\n" + '=' * 16 + 'finded in categoty <' + category + '>' + '=' * 16 + "\n"
+                target_cat = category
+        elif line.startswith("* ["):
+            project = line[line.index("["):-1].strip()
+            if target_cat != "":
+                result += project + "\n"
+            elif project.find(search_name) > 0:
+                result += '\n' + '=' * 16 + 'finded in project ' + '=' * 16 + '\n' + project + "\n"
+
+    print result
+
+if __name__ == "__main__":
+    main()
