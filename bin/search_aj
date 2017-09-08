@@ -14,6 +14,15 @@ TIPS_TPL = "\n" + '=' * 8 + "%s" + '=' * 8 + "\n"
 def usage():
     print "usage: search_aj [catagory_name | project_name]"
 
+def chunk_report(bytes_so_far, chunk_size, total_size):
+   percent = float(bytes_so_far) / total_size
+   percent = round(percent*100, 2)
+   sys.stdout.write("fetching resource info: %0.2f%%\r" % 
+       (percent))
+
+   if bytes_so_far >= total_size:
+      sys.stdout.write('\n')
+
 def main():
     opts,args = getopt.getopt(sys.argv[1:],'',[])
 
@@ -24,17 +33,34 @@ def main():
 
     search_name = args[0]
 
-    print 'searching....'
-
-    search_name = search_name.lower()
+    print 'searching %s....' % search_name
 
     req = urllib2.Request("https://raw.githubusercontent.com/superhj1987/awesome-tech-collections/master/awesome-java.md")
-    content = urllib2.urlopen(req).read()
+    res = urllib2.urlopen(req)
+
+    total_size = res.info().getheader('Content-Length').strip()
+    total_size = int(total_size)
+
+    chunk_size=1024
+    bytes_so_far = 0
+    data = []
+
+    while 1:
+      chunk = res.read(chunk_size)
+      bytes_so_far += len(chunk)
+      if not chunk:
+         break
+
+      data += chunk
+
+      chunk_report(bytes_so_far, chunk_size, total_size)
+    content = "".join(data)
 
     category = ""
     target_cat = None
     search_result = ""
     lines = content.split("\n")
+    search_name = search_name.lower()
     for line in lines:
         if line.startswith("##") :
             target_cat = None
@@ -44,7 +70,7 @@ def main():
                 target_cat = category
         elif line.startswith("* ["):
             project = line[line.index("["):].strip().lower()
-            if target_cat != None:
+            if target_cat:
                 search_result += project + "\n"
             elif project.find(search_name) > 0:
                 search_result += TIPS_TPL % ('find  matched projects in <' + category + '>') + project + "\n"
