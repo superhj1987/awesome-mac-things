@@ -64,14 +64,14 @@ def main():
             target_cat = None
             category = line[line.index(" "):].strip().lower()
             if category.find(search_name) > 0:
-                search_result +=  TIPS_TPL % ('finded in categoty <' + category + '>')
+                search_result +=  TIPS_TPL % ('finded in Categoty[' + category + ']')
                 target_cat = category
         elif line.startswith("* ["):
             project = line[line.index("["):].strip().lower()
             if target_cat:
                 search_result += project + "\n"
             elif project.find(search_name) > 0:
-                search_result += TIPS_TPL % ('find matched projects in <' + category + '>') + project + "\n"
+                search_result += TIPS_TPL % ('find matched projects in Category[' + category + ']') + project + "\n"
 
     print search_result
 
