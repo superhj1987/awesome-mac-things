@@ -9,6 +9,8 @@ import urllib2
 reload(sys) 
 sys.setdefaultencoding( "utf-8" )
 
+TIPS_TPL = "\n" + '=' * 8 + "%s" + '=' * 8 + "\n"
+
 def usage():
     print "usage: search_aj [catagory_name | project_name]"
 
@@ -22,30 +24,32 @@ def main():
 
     search_name = args[0]
 
-    print '=' * 16 + "searching for " + search_name + '=' * 16
+    print 'searching....'
+
+    search_name = search_name.lower()
 
     req = urllib2.Request("https://raw.githubusercontent.com/superhj1987/awesome-tech-collections/master/awesome-java.md")
-    content = urllib2.urlopen(req).read();
+    content = urllib2.urlopen(req).read()
 
-    result = ""
-    target_cat = ""
-
+    category = ""
+    target_cat = None
+    search_result = ""
     lines = content.split("\n")
     for line in lines:
         if line.startswith("##") :
-            target_cat = ""
-            category = line[line.index(" "):-1].strip()
+            target_cat = None
+            category = line[line.index(" "):].strip().lower()
             if category.find(search_name) > 0:
-                result +=  "\n" + '=' * 16 + 'finded in categoty <' + category + '>' + '=' * 16 + "\n"
+                search_result +=  TIPS_TPL % ('finded in categoty <' + category + '>')
                 target_cat = category
         elif line.startswith("* ["):
-            project = line[line.index("["):-1].strip()
-            if target_cat != "":
-                result += project + "\n"
+            project = line[line.index("["):].strip().lower()
+            if target_cat != None:
+                search_result += project + "\n"
             elif project.find(search_name) > 0:
-                result += '\n' + '=' * 16 + 'finded in project ' + '=' * 16 + '\n' + project + "\n"
+                search_result += TIPS_TPL % ('find  matched projects in <' + category + '>') + project + "\n"
 
-    print result
+    print search_result
 
 if __name__ == "__main__":
     main()
