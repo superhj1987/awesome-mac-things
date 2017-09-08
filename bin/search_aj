@@ -17,8 +17,9 @@ def usage():
 def chunk_report(bytes_so_far, chunk_size, total_size):
    percent = float(bytes_so_far) / total_size
    percent = round(percent*100, 2)
-   sys.stdout.write("fetching resource info: %0.2f%%\r" % 
+   sys.stdout.write("searching.... (%0.2f%%)\r" % 
        (percent))
+   sys.stdout.flush()
 
    if bytes_so_far >= total_size:
       sys.stdout.write('\n')
@@ -33,18 +34,15 @@ def main():
 
     search_name = args[0]
 
-    print 'searching %s....' % search_name
-
     req = urllib2.Request("https://raw.githubusercontent.com/superhj1987/awesome-tech-collections/master/awesome-java.md")
     res = urllib2.urlopen(req)
 
     total_size = res.info().getheader('Content-Length').strip()
     total_size = int(total_size)
 
-    chunk_size=1024
+    chunk_size = 1024
     bytes_so_far = 0
     data = []
-
     while 1:
       chunk = res.read(chunk_size)
       bytes_so_far += len(chunk)
