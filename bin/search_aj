@@ -71,7 +71,7 @@ def main():
             if target_cat:
                 search_result += project + "\n"
             elif project.find(search_name) > 0:
-                search_result += TIPS_TPL % ('find  matched projects in <' + category + '>') + project + "\n"
+                search_result += TIPS_TPL % ('find matched projects in <' + category + '>') + project + "\n"
 
     print search_result
 
