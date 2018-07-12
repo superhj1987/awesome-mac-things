@@ -45,3 +45,10 @@ chflags hidden ~/Desktop/macx
 
 # 创建有密码保护的压缩文件
 zip -e protected.zip ~/Desktop/macx.txt
+
+## .DS_store
+
+.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Windows的desktop.ini。
+
+- 禁止.DS_store生成：defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+- 恢复.DS_store生成： defaults delete com.apple.desktopservices DSDontWriteNetworkStores
