@@ -69,7 +69,7 @@ def main():
                     titleLevel = line.index(' '); 
                     tag = line[(titleLevel+1) : -1] #去除结尾换行符 
                     anchor = tag if anchorFlag else tag.lower()
-                    contents.append('   ' * (titleLevel - 2) + contents_template % (tag,anchor))
+                    contents.append('    ' * (titleLevel - 2) + contents_template % (tag,anchor))
                     
                     line = '#' * titleLevel + tag_anchor_template % (tag,anchor) if anchorFlag else line #生成tag描点
                 new_lines.append(line)
