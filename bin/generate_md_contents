@@ -54,7 +54,7 @@ def main():
     with open(fname) as f:
         lines = f.readlines()
         for line in lines:
-            if i == 0 :
+            if i == 0 and line.startswith('#'):
                 contents.append(line) #添加一级title
                 contents += ['\n',contents_title,'\n'] #添加目录title
             elif line.startswith(contents_title):
