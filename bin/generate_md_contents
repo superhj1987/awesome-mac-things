@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-## generate contents for a markdown
 #coding=UTF-8
+## generate contents for a markdown
 
 '''
 根据标题(# ## ### ####...)生成mardown文档的目录, 支持无限层级标题
